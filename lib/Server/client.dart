@@ -1,4 +1,5 @@
 //http://localhost:3000/
+
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:http/http.dart';
@@ -21,7 +22,7 @@ class Client extends StatelessWidget {
 }
 
 class BodyWidget extends StatefulWidget {
-  
+
   @override
   BodyWidgetState createState() {
     return new BodyWidgetState();
@@ -43,7 +44,7 @@ class BodyWidgetState extends State<BodyWidget> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               RaisedButton(
-                child: Text('Enviar requisição ao Servidor'),
+                child: Text('Requisitar Servidor'),
                 onPressed: () {
                   _makeGetRequest();
                 },
@@ -62,8 +63,9 @@ class BodyWidgetState extends State<BodyWidget> {
   _makeGetRequest() async {
     Response response = await get(_localhost());
     setState(() {
-      //apresenta ao cliente o que recebe do servidor
+      //apresenta para o cliente o que recebe do servidor
       serverResponse = response.body;
+      //print("${response.body} | ${response.hashCode} | ${response.runtimeType}");
     });
   }  
 
