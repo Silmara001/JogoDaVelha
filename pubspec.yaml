@@ -8,6 +8,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  http: ^0.12.0+1
+  websocket_channel_wrapper: ^1.1.4
 
   cupertino_icons: ^0.1.2
 
